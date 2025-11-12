@@ -1,5 +1,5 @@
 import { drizzle } from "drizzle-orm/libsql/web";
-// import * as authSchema from "./schemas";
+// import * as authSchema from "./schemas/auth";
 
 export const db = drizzle({
   connection: {
