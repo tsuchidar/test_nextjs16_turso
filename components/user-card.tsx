@@ -16,9 +16,9 @@ export function UserCard({ user }: { user: User }) {
 
   return (
     <Card className="w-full max-w-md">
-      <CardContent className="pt-6">
-        <div className="flex items-center space-x-4">
-          <Avatar className="h-16 w-16">
+      <CardContent>
+        <div className="flex items-start space-x-4">
+          <Avatar className="h-16 w-16 border-2 border-gray-200">
             <AvatarImage
               src={`https://api.dicebear.com/9.x/micah/svg?seed=${user.id}`}
               alt={user.name}
@@ -27,18 +27,31 @@ export function UserCard({ user }: { user: User }) {
               {getInitials(user.name)}
             </AvatarFallback>
           </Avatar>
-          <div className="flex-1 space-y-1">
-            <div className="flex items-center gap-2">
-              <h3 className="text-xl font-semibold leading-none">
-                {user.name}
-              </h3>
+          <div className="flex-1 space-y-2 min-w-0">
+            <div className="flex items-center gap-2 flex-wrap">
               <Badge variant="secondary" className="text-xs">
+                ゲストユーザー
+              </Badge>
+              <Badge variant="outline" className="text-xs">
                 Active
               </Badge>
             </div>
-            <p className="text-sm text-muted-foreground break-all">
-              {user.email}
-            </p>
+            <div className="mt-4">
+              <div className="flex items-center gap-2">
+                <p className="text-sm text-muted-foreground whitespace-nowrap">
+                  名前:
+                </p>
+                <h3 className="text-lg font-semibold leading-none">
+                  {user.name}
+                </h3>
+              </div>
+              <div className="flex items-center gap-2">
+                <p className="text-sm text-muted-foreground whitespace-nowrap">
+                  メール:
+                </p>
+                <p className="text-sm break-all">{user.email}</p>
+              </div>
+            </div>
           </div>
         </div>
       </CardContent>

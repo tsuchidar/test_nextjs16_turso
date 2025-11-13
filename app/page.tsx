@@ -5,7 +5,7 @@ export default async function Home() {
   const session = await verifySession();
 
   return (
-    <div className="container">
+    <div className="">
       <UserCard user={session.user} />
     </div>
   );
