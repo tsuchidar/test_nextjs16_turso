@@ -1,6 +1,6 @@
+"use client";
+
 import Link from "next/link";
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -11,11 +11,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { authClient } from "@/lib/auth-client";
 
-export async function Header() {
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
+export function Header() {
+  const { data: session } = authClient.useSession();
 
   // ユーザー名からイニシャルを生成
   const getInitials = (name: string) => {
