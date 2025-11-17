@@ -41,7 +41,7 @@ export default async function PostList() {
                     })}
                   </span>
                 </div>
-                <p className="text-sm whitespace-pre-wrap wrap-break-word">
+                <p className="text-sm whitespace-pre-wrap wrap-break-word break-all">
                   {post.content}
                 </p>
               </div>

@@ -36,7 +36,7 @@ export function PostForm({ user }: { user: User }) {
               <Textarea
                 name="content"
                 placeholder="投稿する"
-                className="min-h-[100px] resize-none"
+                className="min-h-[100px] resize-none break-all"
                 maxLength={140}
               />
               {error && <p className="text-red-500">{error}</p>}
