@@ -2,6 +2,7 @@ import { User } from "@/types/user";
 import PostList from "./post-list";
 import PostListLoading from "./post-list-loading";
 import { Suspense } from "react";
+import { PostForm } from "./post-form";
 
 export default function LoggedInView({ user }: { user: User }) {
   return (
@@ -16,6 +17,7 @@ export default function LoggedInView({ user }: { user: User }) {
         </div>
 
         {/* 投稿フォーム */}
+        <PostForm user={user} />
 
         {/* タイムライン */}
         <div className="space-y-4">
