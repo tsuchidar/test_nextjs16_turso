@@ -9,9 +9,9 @@ export const verifySession = async () => {
     headers: await headers(),
   });
 
-  if (!session) {
-    redirect("/login");
-  }
+  // if (!session) {
+  //   redirect("/login");
+  // }
 
   return session;
 };

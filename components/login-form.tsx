@@ -29,7 +29,7 @@ export function LoginForm({
               });
             }}
             type="button"
-            className="w-full"
+            className="w-full cursor-pointer"
           >
             ゲストログイン
           </Button>
